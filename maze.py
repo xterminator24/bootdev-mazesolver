@@ -10,7 +10,7 @@ class Maze():
             num_cols,
             cell_size_x,
             cell_size_y,
-            win,
+            win = None,
         ):
             self._x1 = x1
             self._y1 = y1
@@ -28,11 +28,9 @@ class Maze():
             for r in range(0, self._num_rows):
                 cell = Cell(self._win)
                 self._cells[c].append(cell)
-                print(f"creating cell at column: {c}, row: {r}")
 
         for c in range(0, len(self._cells)):
             for r in range(0, len(self._cells[c])):
-                print(f"drawing cell at column: {c}, row: {r}")
                 self._draw_cell(c, r) 
 
     def _draw_cell(self, col_num, row_num):
